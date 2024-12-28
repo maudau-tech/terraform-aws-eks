@@ -49,7 +49,7 @@ resource "aws_eks_cluster" "this" {
     # same functionality, we will do that through an access entry which can be
     # enabled or disabled at any time of their choosing using the variable
     # var.enable_cluster_creator_admin_permissions
-    bootstrap_cluster_creator_admin_permissions = false
+    bootstrap_cluster_creator_admin_permissions = var.enable_cluster_creator_admin_permissions
   }
 
   dynamic "compute_config" {
